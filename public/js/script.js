@@ -1,3 +1,6 @@
+
+
+
 const primaryColor = '#4834d4'
 const warningColor = '#f0932b'
 const successColor = '#6ab04c'
@@ -119,3 +122,5 @@ var lineChart = new Chart(ctx, {
 		bezierCurve: false,
 	}
 })
+
+  

@@ -436,8 +436,35 @@
                             <h3>
                                 Table
                             </h3>
-                             
+                <form id="tableForm" action="/" method="get">
+                 <select class="selectpicker" onchange="myFunction()" id="selectpicker" data-style="btn-info" name="selectpicker">
+
+                    <optgroup label="Select Table">
+                 <% data.forEach(d => { %>
+                    <option name="table1" value=<%= d.teamName %>> <%=d.teamName%> </option>
+                    </optgroup>
+                    <% }); %>
+                </select>
+                <input type="submit" /> 
+                </form>
+            
+            
+
+
+                            <div id="test">default </div>
+                            <script>
+                                
+                                function myFunction() {
+                                   let sel = document.getElementById('selectpicker').value
+                                  
+                                   
+                               }
+                            </script>
                             
+                        
+
+                            
+                           
                             <i class="fas fa-ellipsis-h"></i>
                         </div>
                         <div class="card-content">
@@ -445,7 +472,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Project</th>
+                                        <th>Team Name</th>
                                         <th>Team Lead</th>
                                         <th>Status</th>
                                         <th>Due date</th>
@@ -460,12 +487,17 @@
                                         
                                         
                                 </thead>
+                                
                                 <tbody>
-                                <% data.forEach( function(d) { %>
+                                <% data.forEach( d => { %>
                                       <tr>
-                                        <td><%= d.id%></td>
+                                      
+                                        <td><%= d.id%></td> 
+                                        
                                         <td><%= d.teamName%></td>
                                         <td><%= d.name%></td>
+
+                                        
                                         <td>
                                             <span class="dot">
                                                 <i class="bg-success"></i>
@@ -481,8 +513,9 @@
                                         <td><%= d.total_hrs %></td>
                                         <td><%= d.unplanned_leaves %></td>
                                     </tr>
+                                    
                                 </tbody>
-
+                                    
 
                                 <!-- <tbody>
                                     <tr>
@@ -559,6 +592,8 @@
                                     </tr>
                                 </tbody> -->
                                 <% }); %>
+
+                                
                             </table>
                         </div>
                     </div>
@@ -628,7 +663,7 @@
             </div>
         </div>
        	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-        <script src="js/script.js"></script>
+        <script type="module" src="js/script.js"></script>
     </body>
 
 </body>
