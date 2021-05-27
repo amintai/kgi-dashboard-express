@@ -1,6 +1,5 @@
 
 
-
 const primaryColor = '#4834d4'
 const warningColor = '#f0932b'
 const successColor = '#6ab04c'
@@ -40,9 +39,8 @@ function loadTheme() {
 	var theme = getCookie(themeCookieName)
 	body.classList.add(theme === "" ? themeLight : theme)
 }
-
-function switchTheme() {
-	if (body.classList.contains(themeLight)) {
+document.getElementById('theme').addEventListener("click" , () => {
+		if (body.classList.contains(themeLight)) {
 		body.classList.remove(themeLight)
 		body.classList.add(themeDark)
 		setCookie(themeCookieName, themeDark)
@@ -51,11 +49,28 @@ function switchTheme() {
 		body.classList.add(themeLight)
 		setCookie(themeCookieName, themeLight)
 	}
-}
+})
 
-function collapseSidebar() {
-	body.classList.toggle('sidebar-expand')
-}
+// function switchTheme() {
+// 	// alert()
+// 	if (body.classList.contains(themeLight)) {
+// 		body.classList.remove(themeLight)
+// 		body.classList.add(themeDark)
+// 		setCookie(themeCookieName, themeDark)
+// 	} else {
+// 		body.classList.remove(themeDark)
+// 		body.classList.add(themeLight)
+// 		setCookie(themeCookieName, themeLight)
+// 	}
+// }
+
+// function collapseSidebar() {
+// 	body.classList.toggle('sidebar-expand')
+// }
+document.getElementById('col-sidebar').addEventListener("click" , () => {
+		body.classList.toggle('sidebar-expand')
+
+})
 
 window.onclick = function(event) {
 	openCloseDropdown(event)
@@ -98,7 +113,7 @@ var data = {
 		// backgroundColor: [
 		// 	'rgba(50,205,50,0.4)'
 		// ],
-		data: [140, 115, 130, 100, 123, 88, 99, 66, 120, 52, 59],
+		data: [100, 115, 130, 100, 123, 88, 99, 66, 120, 52, 59],
 		borderWidth: 2,
 		lineTension: 0,
 	}, {
