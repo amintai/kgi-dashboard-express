@@ -82,7 +82,9 @@ function closeAllDropdown() {
 		dropdowns[i].classList.remove('dropdown-expand')
 	}
 }
-
+// document.getElementById('selectpicker').addEventListener("change" , () => {
+	
+// })
 function openCloseDropdown(event) {
 	if (!event.target.matches('.dropdown-toggle')) {
 		// 
@@ -101,6 +103,33 @@ function openCloseDropdown(event) {
 	}
 }
 
+// creates a variable for url we want to fetch
+const url = 'http://localhost:3000/api/data'
+
+// fetch call to our /api/data page
+fetch(url)
+.then(res => {
+	if(!res.ok) {
+		throw new Error(res.statusText)
+	}
+	// returns data from /api/data page in json format to next promise
+	return res.json()
+})
+
+.then(data => {
+	let employee = data
+	let employeeInfo = []
+
+	employee.forEach(employee => {
+		employeeInfo.push([
+			employee.productivity
+		])
+	})
+	
+
+
+
+
 var ctx = document.getElementById('myChart')
 ctx.height = 500
 ctx.width = 500
@@ -108,12 +137,13 @@ var data = {
 	labels: ['January', 'February', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 	datasets: [{
 		fill: true,
-		label: 'Completed',
+		label: 'Completed',	
 		borderColor: successColor,
 		// backgroundColor: [
 		// 	'rgba(50,205,50,0.4)'
 		// ],
 		data: [100, 115, 130, 100, 123, 88, 99, 66, 120, 52, 59],
+		// data: employeeInfo,
 		borderWidth: 2,
 		lineTension: 0,
 	}, {
@@ -130,12 +160,13 @@ var data = {
 }
 
 var lineChart = new Chart(ctx, {
-	type: 'line',
+	type: 'bar',
 	data: data,
 	options: {
-		maintainAspectRatio: false,
-		bezierCurve: false,
-	}
+			maintainAspectRatio: false,
+			bezierCurve: false,
+		}
+	})
 })
 
   
