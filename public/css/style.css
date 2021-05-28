@@ -568,9 +568,9 @@ table th {
 }
 .selectpicker{
 	height:35px;
-	margin-left : 80px;
-	margin-bottom: 30px;
-	padding:10px;
+	 margin-left : 80px;
+	/* margin-bottom: 30px; */
+	padding:10px; 
 	width: 140px;
 	background: var(--second-bg-color);
 	color: var(--second-color);

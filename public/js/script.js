@@ -82,9 +82,7 @@ function closeAllDropdown() {
 		dropdowns[i].classList.remove('dropdown-expand')
 	}
 }
-// document.getElementById('selectpicker').addEventListener("change" , () => {
-	
-// })
+
 function openCloseDropdown(event) {
 	if (!event.target.matches('.dropdown-toggle')) {
 		// 

@@ -17,10 +17,10 @@ app.set('views' , './views')
 app.set('view engine', 'ejs')
 
 app.get('/' , (req,res) => {
-  
- const teamName = req.query.selectTech
- console.log(teamName)
- 
+    
+    
+    const teamName = req.query.selectTech
+    console.log(teamName)
 
     connection.query(`select * from kgi_employee where teamName = '${teamName}'`, (err,data) => {
         if(err) {
@@ -36,7 +36,19 @@ app.get('/' , (req,res) => {
          
     })
 })
-         
+
+
+app.get('/api/team' , (req,res) => {
+
+    connection.query(`select teamName from kgi_employee` , (err,data) => {
+        if(err) {
+            console.log(err.message)
+        }
+        const result = Object.values(JSON.parse(JSON.stringify(data)));
+        console.log(result)
+    })
+})
+        
 
 // creates GET request route for /api/data page
 app.get('/api/data' , (req,res) => {
