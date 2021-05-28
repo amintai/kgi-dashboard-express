@@ -463,40 +463,60 @@
                             <h3>
                                 Table
                             </h3>
-                            <form id="tableForm" >
-                                <select class="selectpicker"  id="selectTech" data-style="btn-info"
-                                    name="selectTech">
+                            <div class="row">
+                                <div class="col">
 
-                                    <optgroup label="Select Table">
-
-                                        <option name="table1" value="PHP"> PHP </option>
-                                        <option name="table1" value="QA"> QA </option>
-                                        <option name="table1" value="Mobile"> Mobile </option>
-                                        <option name="table1" value="Design"> Design </option>
+                                    <form id="tableForm" method="get" action="/team">
+                                        <legend class="label-team">Team Filter</legend>
+                                        <select class="selectpicker"  id="selectTech" data-style="btn-info"
+                                        name="selectTech">
+                                        
+                                        
+                                        <optgroup label="Select Table">
+                                            
+                                            <option name="table1" value="default">Select Team </option>
+                                            <option name="table1" value="PHP"> PHP </option>
+                                            <option name="table1" value="QA"> QA </option>
+                                            <option name="table1" value="Mobile"> Mobile </option>
+                                            <option name="table1" value="Design"> Design </option>
+                                            <option name="table1" value=".NET"> .NET </option>
+                                        <option name="table1" value="E-COm">E-COM </option>
                                     </optgroup>
-
+                                    
                                 </select>
-
-                                <!-- <select class="selectpicker"  id="" data-style="btn-info"
-                                    name="selectTech">
-
-                                    <optgroup label="Select Table">
-
-                                        <option name="table1" value="facebook"> Facebook </option>
-                                        <option name="table1" value="instagram"> Instagram </option>
-                                        <option name="table1" value="whatsapp"> Whatsapp </option>
-                                        <option name="table1" value="goole"> Google </option>
-                                    </optgroup>
-
-                                </select> -->
                                 
-                               
-
-                                <input type="submit" value="Query" class="submit-btn" />
+                                <input type="submit" value="Team" class="submit-btn" id='team-button'/>
                             </form>
+                            
+                        </div>
+                        <div class="col">
+                            <form id="tableForm" method="get" action="/project">
+                                <legend class="label-team">Project Filter</legend>
+                                <select class="selectpicker"  id="selectProject" data-style="btn-info"
+                                name="selectProject">
+                                
+                                
+                                <optgroup label="Select Table">
+                                    
+                                    <option name="table1" value="default">Select Project </option>
+                                    <option name="table1" value="google"> Google </option>
+                                    <option name="table1" value="BANG"> BANG </option>
+                                    <option name="table1" value="facebook"> Facebook </option>
+                                    <option name="table1" value="youtube"> YouTube </option>
+                                    <option name="table1" value="MyTap"> MyTap </option>
+                                <option name="table1" value="E-amazon">Amazon </option>
+                            </optgroup>
+                            
+                        </select>
+                        
+                        <input type="submit" value="Project" class="submit-btn" id='team-button'/>
+                    </form>
+                        </div>
+                        </div>
 
 
 
+                        
 
 
 

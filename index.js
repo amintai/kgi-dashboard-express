@@ -1,6 +1,7 @@
 const express = require('express')
 const connection = require('./config/db')
 const bodyParser = require('body-parser')
+const fetch = require('node-fetch')
 
 const app = express()
 const PORT = 3000
@@ -22,6 +23,25 @@ app.get('/' , (req,res) => {
     const teamName = req.query.selectTech
     console.log(teamName)
 
+    connection.query(`select * from kgi_employee`, (err,data) => {
+        if(err) {
+            console.log(`Error:${err.message}`)
+        }
+         // with Object.protype approach 
+         const result = Object.values(JSON.parse(JSON.stringify(data)));
+         
+         // render our html code
+         res.render('index',{
+             data:result
+         })
+    })
+})
+         
+app.get('/team' , (req,res) => {
+     
+    const teamName = req.query.selectTech
+    console.log(teamName)
+
     connection.query(`select * from kgi_employee where teamName = '${teamName}'`, (err,data) => {
         if(err) {
             console.log(`Error:${err.message}`)
@@ -33,21 +53,34 @@ app.get('/' , (req,res) => {
          res.render('index',{
              data:result
          })
-         
     })
 })
 
-
-app.get('/api/team' , (req,res) => {
-
-    connection.query(`select teamName from kgi_employee` , (err,data) => {
+app.get('/project' ,(req,res) => {
+    const projectName = req.query.selectProject
+    console.log(projectName)
+    connection.query(`select * from kgi_employee where project = '${projectName}'` , (err,data) => {
         if(err) {
-            console.log(err.message)
+            console.log(`Error : ${err.message}`)
         }
         const result = Object.values(JSON.parse(JSON.stringify(data)));
-        console.log(result)
+          // render our html code
+          res.render('index',{
+            data:result
+        })
     })
 })
+
+// app.get('/api/team' , (req,res) => {
+
+//     connection.query(`select teamName from kgi_employee` , (err,data) => {
+//         if(err) {
+//             console.log(err.message)
+//         }
+//         const result = Object.values(JSON.parse(JSON.stringify(data)));
+//         console.log(result)
+//     })
+// })
         
 
 // creates GET request route for /api/data page
