@@ -596,7 +596,7 @@ table th {
 	font-weight : bold;
 	font-family: 'Roboto', sans-serif;
 	box-shadow:  2px 1px 2px rgba(0,0,0,0.1);
-
+	
 
 
 }
@@ -608,4 +608,9 @@ table th {
 	font-size : 1rem;
 	font-weight : bold;
 	font-family: 'Roboto', sans-serif;
+}
+.trash{
+	display: flex;
+	justify-content: unset;
+	margin-top: 20px;
 }

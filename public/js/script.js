@@ -101,6 +101,7 @@ function openCloseDropdown(event) {
 	}
 }
 
+
 // creates a variable for url we want to fetch
 const url = 'http://localhost:3000/api/data'
 
@@ -120,11 +121,13 @@ fetch(url)
 
 	employee.forEach(employee => {
 		employeeInfo.push([
-			employee.productivity
+			employee.total_hrs,
+			employee.billable_hours
 		])
 	})
+			
 	
-
+console.log(`from emp:${employeeInfo}`)
 
 
 
@@ -137,9 +140,9 @@ var data = {
 		fill: true,
 		label: 'Completed',	
 		borderColor: successColor,
-		// backgroundColor: [
-		// 	'rgba(50,205,50,0.4)'
-		// ],
+		backgroundColor: [
+			'rgba(50,205,50,0.4)'
+		],
 		data: [100, 115, 130, 100, 123, 88, 99, 66, 120, 52, 59],
 		// data: employeeInfo,
 		borderWidth: 2,
@@ -148,9 +151,9 @@ var data = {
 		fill: true,
 		label: 'Issues',
 		borderColor: dangerColor,
-		// backgroundColor : [
-		// 	'rgba(255,99,132,0.4)'
-		// ],
+		backgroundColor : [
+			'rgba(255,99,132,0.4)'
+		],
 		data: [66, 44, 12, 48, 99, 56, 78, 23, 100, 22, 47],
 		borderWidth: 2,
 		lineTension: 0,

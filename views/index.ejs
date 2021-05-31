@@ -403,9 +403,9 @@
             <!-- coloring boxes -->
             <div class="row">
                 <% data.forEach( d => { %>
-                    <div class="col-4 col-m-6 col-sm-6">
+                    <div class="col-3 col-m-6 col-sm-6">
                         <div class="counter bg-name">
-                            
+                           
                             <p>
                                 <i class="fas fa-sign"></i>
                             </p>
@@ -452,6 +452,20 @@
                         <p>Not Completed Tasks</p>
                     </div>
                 </div>
+                <div class="col-1 col-m-6 col-sm-6">
+                    <div class="chart-div">
+
+                        <form action="/chart" method="get">
+                            <input type="hidden" class="chart_id" name="chart_id" id="chart_id" value="<%=d.id%>">
+                        
+                            <!-- <p class="chart_class"><%=d.id%></p> -->
+                            
+                            <input type="submit"  class="chart_btn" id='chart_btn' value="Get Chart">
+                        </form>
+                      
+                    </div>
+                </div>
+
                 <% }); %>
             </div>
 
@@ -512,16 +526,18 @@
                         <input type="submit" value="Project" class="submit-btn" id='team-button'/>
                     </form>
                         </div>
+                      
                         </div>
 
 
-
+                        <!-- <form action="/" method="get">
+                            <a href=""><i class="fas fa-trash-restore-alt fa-2x trash"></i></a>
+                        </form> -->
                         
 
 
 
 
-                            <i class="fas fa-ellipsis-h"></i>
                         </div>
                         <div class="card-content">
                             <table>

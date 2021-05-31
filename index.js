@@ -40,7 +40,7 @@ app.get('/' , (req,res) => {
 app.get('/team' , (req,res) => {
      
     const teamName = req.query.selectTech
-    console.log(teamName)
+   
 
     connection.query(`select * from kgi_employee where teamName = '${teamName}'`, (err,data) => {
         if(err) {
@@ -70,7 +70,24 @@ app.get('/project' ,(req,res) => {
         })
     })
 })
+// to get the chart of specifc employee
+app.get('/chart' , (req,res) => {
+    const id = req.query.chart_id
+    // now based on the above id we will get total hours and billabel hours to create KGI chart
 
+    connection.query(`select * from kgi_employee where id = '${id}' ` , (err,data) => {
+        if(err) {
+            console.log(`Error : ${err.message}`)
+        }
+        // with Object.protype approach 
+        const result = Object.values(JSON.parse(JSON.stringify(data)));
+        // console.log(result)
+        res.render('index',{
+            data:result
+        })
+        
+    })
+})
 // app.get('/api/team' , (req,res) => {
 
 //     connection.query(`select teamName from kgi_employee` , (err,data) => {
@@ -96,7 +113,25 @@ app.get('/api/data' , (req,res) => {
         
     })
 })
-       
+
+
+// to get the chart of specifc employee
+app.get('/api/chart' , (req,res) => {
+    const id = req.query.emp_id
+    // now based on the above id we will get total hours and billabel hours to create KGI chart
+
+    connection.query(`select name , total_hrs , billable_hours from kgi_employee ` , (err,data) => {
+        if(err) {
+            console.log(`Error : ${err.message}`)
+        }
+        // with Object.protype approach 
+        const result = Object.values(JSON.parse(JSON.stringify(data)));
+        // console.log(result)
+        res.send(result)
+    })
+})
+
+
          
 
              
