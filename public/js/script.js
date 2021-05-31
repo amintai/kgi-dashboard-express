@@ -1,3 +1,4 @@
+// const { default: fetch } = require("node-fetch")
 
 
 const primaryColor = '#4834d4'
@@ -101,12 +102,19 @@ function openCloseDropdown(event) {
 	}
 }
 
+// const emp = 'http://localhost:3000/chart/:chart_id'
+// fetch(emp)
+// .then(res => {
+// 	return res.json()
+// })
+
+
 
 // creates a variable for url we want to fetch
-const url = 'http://localhost:3000/api/data'
+ const url = 'http://localhost:3000/api/emp'
 
 // fetch call to our /api/data page
-fetch(url)
+ fetch(url)
 .then(res => {
 	if(!res.ok) {
 		throw new Error(res.statusText)
@@ -121,13 +129,14 @@ fetch(url)
 
 	employee.forEach(employee => {
 		employeeInfo.push([
-			employee.total_hrs,
-			employee.billable_hours
+			employee.name,
+			employee.total_resloved,
+			employee.total_created
 		])
 	})
 			
 	
-console.log(`from emp:${employeeInfo}`)
+console.log(`from emp lettest :${employeeInfo}`)
 
 
 
