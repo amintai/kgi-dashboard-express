@@ -541,21 +541,31 @@
                         </div>
                         <div class="card-content">
                             <table>
+                                
                                 <thead>
                                     <tr>
                                         <th>#</th>
                                         <th>Team Name</th>
+                                        <th>Name</th>
                                         <th>Team Lead</th>
-                                        <th>Status</th>
                                         <th>Project</th>
-                                        <th>Due date</th>
+                                    
                                         <th>Total Resolved</th>
                                         <th>Total Created</th>
                                         <th>Total Closed</th>
+                                        <th>fb and resolved</th>
+                                        <th>critical resolved</th>
+                                        <th>rpt resloved</th>
+                                        <th>resolved in days avg</th>
                                         <th>Productivity</th>
                                         <th>Billable Hours</th>
                                         <th>Total Hours</th>
                                         <th>Unplanned leaves</th>
+                                        <th>planned leaves</th>
+                                        <th>Avg Delayed in Timesheet</th>
+                                        <th>estimation vs actual on task</th>
+                                        <th>Less Hours</th>
+                                        <th>not complete task</th>
                                     </tr>
 
 
@@ -572,20 +582,28 @@
 
 
                                         <td>
-                                            <span class="dot">
-                                                <i class="bg-success"></i>
-                                                Completed
-                                            </span>
+                                           <%= d.supervisor_name%>
                                         </td>
                                         <td><%= d.project%></td>
-                                        <td>17/07/2020</td>
+                                        
                                         <td><%= d.total_resloved %></td>
                                         <td><%= d.total_created %></td>
                                         <td><%= d.total_closed %></td>
+                                        <td><%= d.fb_and_resolved%></td>
+                                        <td><%= d.critical_resolved%></td>
+                                        
+                                        <td><%= d.rpt_resloved%></td>
+                                        <td><%= d.resolved_in_days_avg%></td>
+
                                         <td><%= d.productivity%></td>
                                         <td><%= d.billable_hours %></td>
                                         <td><%= d.total_hrs %></td>
                                         <td><%= d.unplanned_leaves %></td>
+                                        <td><%= d.planned_leaves %></td>
+                                        <td><%= d.avg_delayed_in_timesheet %></td>
+                                        <td><%= d.estimation_vs_actual_on_task %></td>
+                                        <td><%= d.less_hours %></td>
+                                        <td><%= d.not_complete_task %></td>
                                     </tr>
 
                                 </tbody>

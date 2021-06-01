@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const fetch = require('node-fetch')
 
 const app = express()
-const PORT = 3000
+const PORT = 2000
 
 
 // static files
@@ -88,8 +88,9 @@ app.get('/chart' , (req,res) => {
         
     })
 })
-app.get('/api/emp' , (req,res) => {
+app.get('/api/:chart_id' , (req,res) => {
     const id = req.query.chart_id
+    console.log(`id = ${id}`)
     // now based on the above id we will get total hours and billabel hours to create KGI chart
 
     connection.query(`select * from kgi_employee where id = '${id}' ` , (err,data) => {
@@ -100,6 +101,7 @@ app.get('/api/emp' , (req,res) => {
         const result = Object.values(JSON.parse(JSON.stringify(data)));
         // console.log(result)
         res.send(result)
+        
         
     })
 })

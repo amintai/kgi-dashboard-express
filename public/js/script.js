@@ -111,7 +111,14 @@ function openCloseDropdown(event) {
 
 
 // creates a variable for url we want to fetch
- const url = 'http://localhost:3000/api/emp'
+const ebtn = document.getElementById('chart_btn')
+const eid = document.getElementById('chart_id').value
+ebtn.addEventListener('click' , () => {
+	alert(eid)
+})
+
+//  const url = `http://localhost:2000/api/?chart_id=10`
+ const url = `http://localhost:2000/api/chart_id/?chart_id=${eid}`
 
 // fetch call to our /api/data page
  fetch(url)
@@ -124,10 +131,12 @@ function openCloseDropdown(event) {
 })
 
 .then(data => {
+	console.log(data)
 	let employee = data
 	let employeeInfo = []
 
 	employee.forEach(employee => {
+		
 		employeeInfo.push([
 			employee.name,
 			employee.total_resloved,
