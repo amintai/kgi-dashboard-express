@@ -64,6 +64,7 @@ app.get('/project' ,(req,res) => {
             console.log(`Error : ${err.message}`)
         }
         const result = Object.values(JSON.parse(JSON.stringify(data)));
+        
           // render our html code
           res.render('index',{
             data:result
@@ -81,6 +82,8 @@ app.get('/chart' , (req,res) => {
         }
         // with Object.protype approach 
         const result = Object.values(JSON.parse(JSON.stringify(data)));
+
+      
         // console.log(result)
         res.render('index',{
             data:result

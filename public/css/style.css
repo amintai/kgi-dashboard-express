@@ -614,3 +614,20 @@ table th {
 	justify-content: unset;
 	margin-top: 20px;
 }
+
+.chart-div{
+	display: flex;
+	justify-content: center;
+}
+.chart_btn{
+	vertical-align: middle;
+	margin-top: 60px;
+	height: 40px;
+	width: 90px;
+	background-color: #d63232;
+	border-radius: 2px;
+	text-align: center;
+	color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
