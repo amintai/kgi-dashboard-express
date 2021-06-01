@@ -133,58 +133,92 @@ ebtn.addEventListener('click' , () => {
 .then(data => {
 	console.log(data)
 	let employee = data
-	let employeeInfo = []
+	let billable_hours = []
+	let total_hrs = []
+	let productivity = []
+	
+	employee.forEach(employee => {
+		total_hrs.push([
+			employee.total_hrs
+		])
+	})
+
+	employee.forEach(employee => {
+		productivity.push([
+			employee.productivity
+		])
+	})
 
 	employee.forEach(employee => {
 		
-		employeeInfo.push([
-			employee.name,
-			employee.total_resloved,
-			employee.total_created
+		billable_hours.push([
+			employee.billable_hours,
+			// employee.billable_hours,
+			// employee.productivity
 		])
 	})
 			
 	
-console.log(`from emp lettest :${employeeInfo}`)
+// console.log(`from emp lettest :${employeeInfo}`)
 
 
 
 var ctx = document.getElementById('myChart')
-ctx.height = 500
-ctx.width = 500
+// ctx.height = 100
+// ctx.width = 10
+// const data = {
+// 	labels : [
+// 		'red',
+// 		'green',
+// 		'blue'
+// 	],
+// 	datasets : [
+// 		{
+// 			label :"my first data set",
+// 			data :[300,120,232],
+// 			backgroundColor : [
+// 				'rgb(255, 99, 132)',
+// 				'rgb(54, 162, 235)',
+// 				'rgb(255, 205, 86)'
+// 			],
+// 			hoverOffset : 4
+// 		}
+// 	]
+//
+
+// let total_hrs = employeeInfo
+
 var data = {
-	labels: ['January', 'February', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-	datasets: [{
-		fill: true,
-		label: 'Completed',	
-		borderColor: successColor,
-		backgroundColor: [
-			'rgba(50,205,50,0.4)'
-		],
-		data: [100, 115, 130, 100, 123, 88, 99, 66, 120, 52, 59],
-		// data: employeeInfo,
-		borderWidth: 2,
-		lineTension: 0,
-	}, {
-		fill: true,
-		label: 'Issues',
-		borderColor: dangerColor,
-		backgroundColor : [
-			'rgba(255,99,132,0.4)'
-		],
-		data: [66, 44, 12, 48, 99, 56, 78, 23, 100, 22, 47],
-		borderWidth: 2,
-		lineTension: 0,
-	}]
+	labels : [
+				'red',
+				'green',
+				'blue'
+			],
+	datasets : [
+		{
+			label :"my first data set",
+			data :[
+				total_hrs,
+				billable_hours,
+				productivity
+			],
+			backgroundColor : [
+				'rgb(255, 99, 132)',
+				'rgb(54, 162, 235)',
+				'rgb(255, 205, 86)'
+			],
+			hoverOffset : 4
+		}
+	], 
 }
 
 var lineChart = new Chart(ctx, {
-	type: 'bar',
-	data: data,
-	options: {
-			maintainAspectRatio: false,
-			bezierCurve: false,
-		}
+	type: 'pie',
+	data: data
+	// options: {
+	// 		maintainAspectRatio: false,
+	// 		bezierCurve: false,
+	// 	}
 	})
 })
 
