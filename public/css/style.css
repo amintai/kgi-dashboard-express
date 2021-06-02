@@ -631,3 +631,18 @@ table th {
 	border-radius: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+.all-record {
+	display: flex;
+	justify-content: right;
+}
+.record-btn{
+	height: 40px;
+	width: 90px;
+	background-color: #d63232;
+	border-radius: 2px;
+	text-align: center;
+	color: #fff;
+	border-radius: 10px;
+	font-size: 0.9rem;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}

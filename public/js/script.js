@@ -190,9 +190,9 @@ var ctx = document.getElementById('myChart')
 
 var data = {
 	labels : [
-				'red',
-				'green',
-				'blue'
+				'total_hours',
+				'billable_hours',
+				'productivity'
 			],
 	datasets : [
 		{

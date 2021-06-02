@@ -58,7 +58,7 @@ app.get('/team' , (req,res) => {
 
 app.get('/project' ,(req,res) => {
     const projectName = req.query.selectProject
-    console.log(projectName)
+    // console.log(projectName)
     connection.query(`select * from kgi_employee where project = '${projectName}'` , (err,data) => {
         if(err) {
             console.log(`Error : ${err.message}`)
@@ -93,7 +93,7 @@ app.get('/chart' , (req,res) => {
 })
 app.get('/api/:chart_id' , (req,res) => {
     const id = req.query.chart_id
-    console.log(`id = ${id}`)
+    // console.log(`id = ${id}`)
     // now based on the above id we will get total hours and billabel hours to create KGI chart
 
     connection.query(`select * from kgi_employee where id = '${id}' ` , (err,data) => {
