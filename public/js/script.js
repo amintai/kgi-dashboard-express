@@ -117,6 +117,13 @@ ebtn.addEventListener('click' , () => {
 	alert(eid)
 })
 
+// to get the selected value of radio button
+var radios = document.querySelectorAll('input[type=radio][name="chart"]');
+    radios.forEach(radio => radio.addEventListener('change', () => {
+		alert(radio.value)
+	})
+);
+
 //  const url = `http://localhost:2000/api/?chart_id=10`
  const url = `http://localhost:2000/api/chart_id/?chart_id=${eid}`
 
@@ -136,10 +143,30 @@ ebtn.addEventListener('click' , () => {
 	let billable_hours = []
 	let total_hrs = []
 	let productivity = []
+	let total_created = []
+	let total_closed = []
+	let total_resolved = []
+	
+
 	
 	employee.forEach(employee => {
 		total_hrs.push([
 			employee.total_hrs
+		])
+	})
+	employee.forEach(employee => {
+		total_created.push([
+			employee.total_created
+		])
+	})
+	employee.forEach(employee => {
+		total_resolved.push([
+			employee.total_resolved
+		])
+	})
+	employee.forEach(employee => {
+		total_closed.push([
+			employee.total_closed
 		])
 	})
 
@@ -192,7 +219,10 @@ var data = {
 	labels : [
 				'total_hours',
 				'billable_hours',
-				'productivity'
+				'productivity',
+				'Total_created',
+				'Total_Resolved',
+				'Total_closed'
 			],
 	datasets : [
 		{
@@ -200,12 +230,18 @@ var data = {
 			data :[
 				total_hrs,
 				billable_hours,
-				productivity
+				productivity,
+				total_created,
+				total_closed,
+				total_resolved
 			],
 			backgroundColor : [
 				'rgb(255, 99, 132)',
 				'rgb(54, 162, 235)',
-				'rgb(255, 205, 86)'
+				'rgb(255, 25, 86)',
+				'rgb(199,200,93)',
+				'rgb(122,34,222)',
+				'rgb(233,11,223)'
 			],
 			hoverOffset : 4
 		}

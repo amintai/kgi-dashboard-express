@@ -51,7 +51,36 @@
             </form>
             <!-- end form -->
             <!-- nav right -->
-            <ul class="navbar-nav nav-right">
+        <ul class="navbar-nav nav-right">
+                <!-- <li class="nav-item avt-wrapper"> -->
+                    <!-- <div class="avt dropdown"> -->                         <!-- <img src="img/assets/profile.jpeg" alt="User image" class="dropdown-toggle"
+                            data-toggle="user-menu"> -->
+                        <!-- <a href="#" class="nav-link">
+                            <i class="fas fa-user dropdown-toggle"  data-toggle="user-menu"></i>
+                        </a>
+
+                        <ul id="user-menu" class="dropdown-menu">
+                            <li class="dropdown-menu-item">
+                                <a class="dropdown-menu-link">
+                                    <div>
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <span>Bar</span>
+                                </a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#" class="dropdown-menu-link">
+                                    <div>
+                                        <i class="fas fa-cog"></i>
+                                    </div>
+                                    <span>Pie</span>
+                                </a>
+                            </li>
+                            
+                           
+                        </ul>
+                    </div>
+                </li> -->
                 <li class="nav-item mode">
                     <a class="nav-link" href="#" id="theme">
                         <i class="fas fa-moon dark-icon"></i>
@@ -61,10 +90,12 @@
 
                 <!-- navbar functions -->
                 <li class="nav-item dropdown">
+                    
                     <a class="nav-link">
                         <i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
                         <span class="navbar-badge">15</span>
                     </a>
+
                     <!-- <ul id="notification-menu" class="dropdown-menu notification-menu">
                         <div class="dropdown-menu-header">
                             <span>
@@ -296,6 +327,7 @@
                         </ul>
                     </div>
                 </li>
+               
             </ul>
             <!-- end nav right -->
         </div>
@@ -526,7 +558,7 @@
                                     <option name="table1" value="facebook"> Facebook </option>
                                     <option name="table1" value="youtube"> YouTube </option>
                                     <option name="table1" value="MyTap"> MyTap </option>
-                                <option name="table1" value="E-amazon">Amazon </option>
+                                <option name="table1" value="amazon">Amazon </option>
                             </optgroup>
                             
                         </select>
@@ -759,9 +791,23 @@
                             <h3>
                                 Chartjs
                             </h3>
+                            
+                            <!-- <form action="/" method="get">
+                                    <div class="radio-div">
+                                    
+                                        <p>Select Chart</p>
+                                        <input type="radio" id="pie" name="chart" value="pie">
+                                        <label for="pie">Pie</label>
+                                        <input type="radio" id="bar" name="chart" value="bar">
+                                        <label for="bar">Bar</label>
+                                        <input type="submit" value="submit">   
+                                    </div>
+                                </form> -->
+                                
                         </div>
                         <div class="card-content">
-                            <canvas id="myChart"></canvas>
+                            <canvas id="myChart">
+                            </canvas>
                         </div>
                     </div>
                 </div>

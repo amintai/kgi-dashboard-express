@@ -177,7 +177,7 @@ body {
 	display: none;
 	flex-direction: column;
 	position: absolute;
-	right: 20%;
+	right: 50%;
 	top: 90%;
 	background: var(--main-bg-color);
 	max-width: 300px;
